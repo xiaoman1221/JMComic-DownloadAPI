@@ -13,9 +13,9 @@ async def download_file(jmid: str):
     try:
         option = jmcomic.create_option_by_file('./option.yml')
         jmcomic.download_album(jmid, option)  # 传入要下载的album的id，即可下载整个album到本地.
-        return {"code": 200,"message": "OK","url": f"http://127.0.0.1:8000/pdf/{jmid}.pdf"}
+        return {"code": 200,"message": "当前链接有效期：2小时","url": f"http://127.0.0.1:8000/pdf/{jmid}.pdf"}
     except:
-        return {"code": 500, "message": "Something went wrong"}
+        return {"code": 500, "message": "No Comic Found"}
 
 @app.get("/pdf/{jmid}.pdf")
 async def download_pdf(jmid: str):
