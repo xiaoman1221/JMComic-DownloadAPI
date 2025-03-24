@@ -1,4 +1,5 @@
 import jmcomic  # 导入此模块，需要先安装.
+import uvicorn
 from fastapi import FastAPI, HTTPException
 from fastapi.responses import FileResponse
 import os
@@ -25,3 +26,6 @@ async def download_pdf(jmid: str):
         raise HTTPException(status_code=404, detail="File not found")
     # Return the file as a response
     return FileResponse(file_path, media_type="application/pdf", filename=f"{jmid}.pdf")
+
+if __name__ == "__main__":
+    uvicorn.run(app, host="0.0.0.0", port=8000)
