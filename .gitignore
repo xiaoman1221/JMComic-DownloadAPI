@@ -1,5 +1,5 @@
-./pdf/
-./sources/
-./.venv/
-./venv/
-./__pycache__/
+pdf
+sources
+.venv
+venv
+__pycache__
