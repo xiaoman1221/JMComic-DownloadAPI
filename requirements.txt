@@ -1,3 +1,4 @@
 jmcomic
 fastapi
 img2pdf
+uvicorn
